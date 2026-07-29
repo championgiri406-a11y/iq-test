@@ -12,50 +12,34 @@ function startTest() {
 
 document.getElementById("app").innerHTML = `
 
-<div class="test-screen">
+<div class="container">
 
-<h2>Question 1 of 20</h2>
+<div class="header">
+<div class="logo">🧠 IQ TEST HUB</div>
+<div class="timer">20:00</div>
+</div>
+
+<h3>Question 1 of 20</h3>
 
 <div class="progress">
-<div class="progress-fill" style="width:5%"></div>
+<div class="progress-fill"></div>
 </div>
 
-<div class="timer-box">
-⏱️ 20:00
-</div>
-
-<div class="question-card">
-
-<h1>
+<div class="question">
 What number comes next?
-</h1>
-
-<h2>
+<br><br>
 2, 4, 8, 16, ?
-</h2>
+</div>
 
 <div class="answers">
-
-<button class="answer">18</button>
-
-<button class="answer">24</button>
-
-<button class="answer">32</button>
-
-<button class="answer">34</button>
-
+<button>18</button>
+<button>24</button>
+<button>32</button>
+<button>34</button>
 </div>
 
-<br>
-
-<button class="next-btn">
-Next →
-</button>
-
-</div>
+<button class="next-btn">Next →</button>
 
 </div>
 
 `;
-
-}
