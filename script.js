@@ -1,5 +1,6 @@
 let currentQuestion = 0;
 let score = 0;
+
 document.addEventListener("DOMContentLoaded", () => {
   document
     .getElementById("startBtn")
@@ -57,31 +58,28 @@ function selectAnswer(index){
 
 }
 
-function nextQuestion(){
+function nextQuestion() {
 
-  if(currentQuestion < questions.length-1){
-      currentQuestion++;
-      showQuestion();
-  }else{
+  if (currentQuestion < questions.length - 1) {
+    currentQuestion++;
+    showQuestion();
+  } else {
 
-document.getElementById("app").innerHTML = `
+    document.getElementById("app").innerHTML = `
+      <div class="container">
+        <h1>🏆 Test Completed</h1>
 
-<div class="container">
+        <h2>Your Score</h2>
 
-<h1>🏆 Test Completed</h1>
+        <h1>${score} / ${questions.length}</h1>
 
-<h2>Your Score</h2>
+        <p>Next, we'll calculate your IQ score.</p>
 
-<h1>${score} / ${questions.length}</h1>
-
-<p>Next, we'll calculate your IQ score.</p>
-
-<button class="next-btn" onclick="location.reload()">
-Restart Test
-</button>
-
-</div>
-
-`;
+        <button class="next-btn" onclick="location.reload()">
+          Restart Test
+        </button>
+      </div>
+    `;
 
   }
+}
