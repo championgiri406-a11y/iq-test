@@ -1,5 +1,5 @@
 let currentQuestion = 0;
-
+let score = 0;
 document.addEventListener("DOMContentLoaded", () => {
   document
     .getElementById("startBtn")
@@ -62,7 +62,7 @@ function nextQuestion(){
   if(currentQuestion < questions.length-1){
       currentQuestion++;
       showQuestion();
-  else{
+  }else{
 
 document.getElementById("app").innerHTML = `
 
