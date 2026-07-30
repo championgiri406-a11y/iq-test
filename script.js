@@ -16,6 +16,46 @@ function startTest() {
   showQuestion();
 }
 
+function startTimer() {
+
+  clearInterval(timerInterval);
+
+  timerInterval = setInterval(() => {
+
+    let minutes = Math.floor(timeLeft / 60);
+    let seconds = timeLeft % 60;
+
+    const timer = document.querySelector(".timer");
+
+    if (timer) {
+      timer.textContent =
+        `${String(minutes).padStart(2,"0")}:${String(seconds).padStart(2,"0")}`;
+    }
+
+    if (timeLeft <= 0) {
+
+      clearInterval(timerInterval);
+
+      document.getElementById("app").innerHTML = `
+      <div class="container">
+        <h1>⏰ Time's Up!</h1>
+        <p>Your test has ended.</p>
+
+        <button class="next-btn" onclick="location.reload()">
+          Restart Test
+        </button>
+      </div>
+      `;
+
+      return;
+    }
+
+    timeLeft--;
+
+  },1000);
+
+}
+
 function showQuestion() {
   const q = questions[currentQuestion];
 
