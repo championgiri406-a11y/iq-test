@@ -2,6 +2,9 @@ console.log("script.js loaded");
 let currentQuestion = 0;
 let score = 0;
 
+let timeLeft = 20 * 60; // 20 minutes
+let timerInterval;
+
 document.addEventListener("DOMContentLoaded", () => {
   document
     .getElementById("startBtn")
