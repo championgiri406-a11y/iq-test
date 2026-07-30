@@ -46,7 +46,15 @@ function showQuestion() {
 }
 
 function selectAnswer(index){
-  console.log("Selected:", index);
+
+    if(index === questions[currentQuestion].answer){
+        score++;
+    }
+
+    document.querySelectorAll(".answers button").forEach(btn=>{
+        btn.disabled = true;
+    });
+
 }
 
 function nextQuestion(){
@@ -54,8 +62,26 @@ function nextQuestion(){
   if(currentQuestion < questions.length-1){
       currentQuestion++;
       showQuestion();
-  }else{
-      alert("🎉 Test completed!");
-  }
+  else{
 
-}
+document.getElementById("app").innerHTML = `
+
+<div class="container">
+
+<h1>🏆 Test Completed</h1>
+
+<h2>Your Score</h2>
+
+<h1>${score} / ${questions.length}</h1>
+
+<p>Next, we'll calculate your IQ score.</p>
+
+<button class="next-btn" onclick="location.reload()">
+Restart Test
+</button>
+
+</div>
+
+`;
+
+  }
