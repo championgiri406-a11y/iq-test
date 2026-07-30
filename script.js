@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function startTest() {
+  startTimer();
   showQuestion();
 }
 
