@@ -64,7 +64,9 @@ function showQuestion() {
 
     <div class="header">
       <div class="logo">🧠 IQ TEST HUB</div>
-      <div class="timer">20:00</div>
+      <div class="timer">
+${String(Math.floor(timeLeft / 60)).padStart(2,"0")}:${String(timeLeft % 60).padStart(2,"0")}
+</div>
     </div>
 
     <h3>Question ${currentQuestion + 1} of ${questions.length}</h3>
