@@ -1,45 +1,61 @@
+let currentQuestion = 0;
+
 document.addEventListener("DOMContentLoaded", () => {
-
-const startBtn = document.getElementById("startBtn");
-
-if (startBtn) {
-  startBtn.addEventListener("click", startTest);
-}
-
+  document
+    .getElementById("startBtn")
+    .addEventListener("click", startTest);
 });
 
 function startTest() {
+  showQuestion();
+}
 
-document.getElementById("app").innerHTML = `
+function showQuestion() {
+  const q = questions[currentQuestion];
 
-<div class="container">
+  document.getElementById("app").innerHTML = `
+  <div class="container">
 
-<div class="header">
-<div class="logo">🧠 IQ TEST HUB</div>
-<div class="timer">20:00</div>
-</div>
+    <div class="header">
+      <div class="logo">🧠 IQ TEST HUB</div>
+      <div class="timer">20:00</div>
+    </div>
 
-<h3>Question 1 of 20</h3>
+    <h3>Question ${currentQuestion + 1} of ${questions.length}</h3>
 
-<div class="progress">
-<div class="progress-fill"></div>
-</div>
+    <div class="progress">
+      <div class="progress-fill" style="width:${((currentQuestion + 1) / questions.length) * 100}%"></div>
+    </div>
 
-<div class="question">
-What number comes next?
-<br><br>
-2, 4, 8, 16, ?
-</div>
+    <div class="question">
+      ${q.question.replace(/\n/g,"<br>")}
+    </div>
 
-<div class="answers">
-<button>18</button>
-<button>24</button>
-<button>32</button>
-<button>34</button>
-</div>
+    <div class="answers">
+      ${q.options.map((option,index)=>
+      `<button onclick="selectAnswer(${index})">${option}</button>`
+      ).join("")}
+    </div>
 
-<button class="next-btn">Next →</button>
+    <button class="next-btn" onclick="nextQuestion()">
+      Next →
+    </button>
 
-</div>
+  </div>
+  `;
+}
 
-`;
+function selectAnswer(index){
+  console.log("Selected:", index);
+}
+
+function nextQuestion(){
+
+  if(currentQuestion < questions.length-1){
+      currentQuestion++;
+      showQuestion();
+  }else{
+      alert("🎉 Test completed!");
+  }
+
+}
