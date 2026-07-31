@@ -258,3 +258,18 @@ body{
     font-weight:700;
     color:#4f46e5;
 }
+.question-header{
+    display:flex;
+    justify-content:center;
+    margin:15px 0 25px;
+}
+
+.question-badge{
+    background:linear-gradient(135deg,#4f46e5,#7c3aed);
+    color:#fff;
+    padding:10px 24px;
+    border-radius:999px;
+    font-size:18px;
+    font-weight:700;
+    box-shadow:0 10px 25px rgba(79,70,229,.25);
+}
