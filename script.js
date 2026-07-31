@@ -4,7 +4,8 @@ let timeLeft = 20 * 60;
 let timer;
 
 document.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("startBtn").addEventListener("click", startTest);
+    document.getElementById("startBtn").addEventListener("click", startTest);
+    loadBestStats();
 });
 
 function showLoading() {
