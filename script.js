@@ -30,6 +30,7 @@ function showLoading() {
 }
 
 function startTest() {
+document.getElementById("startBtn").disabled = true;
   currentQuestion = 0;
   score = 0;
   timeLeft = 20 * 60;
