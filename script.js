@@ -7,6 +7,22 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("startBtn").addEventListener("click", startTest);
 });
 
+function showLoading() {
+  document.getElementById("app").innerHTML = `
+    <div class="loading-screen">
+      <div class="brain">🧠</div>
+      <h1>IQ TEST HUB</h1>
+      <p>Preparing your personalized IQ test...</p>
+      <div class="loader"></div>
+    </div>
+  `;
+
+  setTimeout(() => {
+    showQuestion();
+    startTimer();
+  }, 2500);
+}
+
 function startTest() {
   currentQuestion = 0;
   score = 0;
