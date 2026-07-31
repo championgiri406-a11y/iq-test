@@ -118,20 +118,34 @@ function finishTest() {
   else iq = 155;
 
   document.getElementById("app").innerHTML = `
-  <div class="container">
+<div class="container">
 
-    <h1>🏆 Test Completed</h1>
+<h1>🧠 IQ TEST HUB</h1>
 
-    <h2>Your Score</h2>
-    <h1>${score} / ${questions.length}</h1>
+<h2>🎉 Assessment Complete</h2>
 
-    <h2>Estimated IQ</h2>
-    <h1>${iq}</h1>
+<div style="font-size:80px;font-weight:bold;color:#4f46e5;margin:20px 0;">
+${iq}
+</div>
 
-    <button class="next-btn" onclick="location.reload()">
-      Restart Test
-    </button>
+<h2>Estimated IQ</h2>
 
-  </div>
-  `;
+<p style="font-size:22px;">
+Score: <b>${score} / ${questions.length}</b>
+</p>
+
+<p style="font-size:20px;">
+${iq >= 140 ? "🧠 Genius Level" :
+iq >= 125 ? "🌟 Exceptional Intelligence" :
+iq >= 110 ? "👍 Above Average" :
+iq >= 95 ? "🙂 Average Intelligence" :
+"📚 Keep Practicing"}
+</p>
+
+<button class="next-btn" onclick="location.reload()">
+🔄 Try Again
+</button>
+
+</div>
+`;
 }
