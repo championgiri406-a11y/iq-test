@@ -151,18 +151,4 @@ iq >= 95 ? "🥉 Average" :
 
 </div>
 `;
-.score-box{
-    margin:25px 0;
-    text-align:center;
-}
-
-.score-box h3{
-    font-size:22px;
-    margin-bottom:10px;
-}
-
-.score-number{
-    font-size:40px;
-    font-weight:700;
-    color:#4f46e5;
 }
