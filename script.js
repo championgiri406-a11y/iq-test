@@ -29,6 +29,9 @@ function startTest() {
   timeLeft = 20 * 60;
 
   questions.sort(() => Math.random() - 0.5);
+
+  showLoading();
+}
   
   showQuestion();
   startTimer();
