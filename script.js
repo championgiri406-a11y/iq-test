@@ -74,7 +74,11 @@ function showQuestion() {
       <div class="timer">${String(Math.floor(timeLeft / 60)).padStart(2,"0")}:${String(timeLeft % 60).padStart(2,"0")}</div>
     </div>
 
-    <h3>Question ${currentQuestion + 1} of ${questions.length}</h3>
+    <div class="question-header">
+    <div class="question-badge">
+        Question ${currentQuestion + 1} / ${questions.length}
+    </div>
+</div>
 
     <div class="progress">
       <div class="progress-fill" style="width:${((currentQuestion + 1) / questions.length) * 100}%"></div>
