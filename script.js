@@ -5,7 +5,12 @@ let timer;
 
 document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("startBtn").addEventListener("click", startTest);
-    loadBestStats();
+
+    document.getElementById("bestIQ").textContent =
+        localStorage.getItem("bestIQ") || "--";
+
+    document.getElementById("bestScore").textContent =
+        localStorage.getItem("bestScore") || "--";
 });
 
 function showLoading() {
