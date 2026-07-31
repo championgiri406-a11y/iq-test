@@ -121,29 +121,30 @@ function finishTest() {
 <div class="container">
 
 <h1>🧠 IQ TEST HUB</h1>
-
 <h2>🎉 Assessment Complete</h2>
 
-<div style="font-size:80px;font-weight:bold;color:#4f46e5;margin:20px 0;">
-${iq}
+<div class="iq-circle" style="--deg:${iq*2.3}deg;">
+    <div class="iq-inner">
+        <div class="iq-number">${iq}</div>
+        <div class="iq-label">IQ</div>
+    </div>
 </div>
 
-<h2>Estimated IQ</h2>
+<div class="badge">
+${iq >= 140 ? "🏆 Genius" :
+iq >= 125 ? "🥇 Gifted" :
+iq >= 110 ? "🥈 Above Average" :
+iq >= 95 ? "🥉 Average" :
+"📘 Keep Practicing"}
+</div>
 
-<p style="font-size:22px;">
-Score: <b>${score} / ${questions.length}</b>
-</p>
-
-<p style="font-size:20px;">
-${iq >= 140 ? "🧠 Genius Level" :
-iq >= 125 ? "🌟 Exceptional Intelligence" :
-iq >= 110 ? "👍 Above Average" :
-iq >= 95 ? "🙂 Average Intelligence" :
-"📚 Keep Practicing"}
+<h3>Your Score</h3>
+<p style="font-size:26px;font-weight:bold;">
+${score} / ${questions.length}
 </p>
 
 <button class="next-btn" onclick="location.reload()">
-🔄 Try Again
+🔄 Restart Test
 </button>
 
 </div>
