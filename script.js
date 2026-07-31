@@ -85,9 +85,9 @@ ${String(Math.floor(timeLeft / 60)).padStart(2,"0")}:${String(timeLeft % 60).pad
       ).join("")}
     </div>
 
-    <button class="next-btn" onclick="nextQuestion()">
-      Next →
-    </button>
+    <button class="next-btn" id="nextBtn" onclick="nextQuestion()" style="display:none;">
+  Next →
+</button>
 
   </div>
   `;
