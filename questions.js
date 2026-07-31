@@ -87,5 +87,36 @@ question:"Which word does NOT belong?",
 options:["Triangle","Square","Circle","Cube"],
 answer:3
 }
+,
+{
+question:"Find the missing number:\n1, 2, 6, 24, 120, ?",
+options:["240","360","600","720"],
+answer:3
+},
+{
+question:"A bat and a ball cost $1.10 in total. The bat costs $1.00 more than the ball. How much does the ball cost?",
+options:["5¢","10¢","15¢","20¢"],
+answer:0
+},
+{
+question:"Which number comes next?\n256, 128, 64, 32, 16, ?",
+options:["12","10","8","4"],
+answer:2
+},
+{
+question:"If all ZIPS are LAPS, and no LAPS are MOPS, which statement is definitely true?",
+options:[
+"No ZIPS are MOPS",
+"Some ZIPS are MOPS",
+"All MOPS are ZIPS",
+"All LAPS are ZIPS"
+],
+answer:0
+},
+{
+question:"Find the missing number:\n11, 22, 44, 88, ?",
+options:["132","166","176","198"],
+answer:2
+}
 ];
 
