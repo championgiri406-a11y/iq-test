@@ -61,5 +61,31 @@ question:"A man is facing north. He turns 135° clockwise, then 225° anticlockw
 options:["North","South","East","West"],
 answer:3
 }
+,
+{
+question:"Which number comes next?\n3, 7, 15, 31, 63, ?",
+options:["95","111","127","129"],
+answer:2
+},
+{
+question:"If CAT = 24 and DOG = 26, then BIRD = ?",
+options:["33","35","37","39"],
+answer:2
+},
+{
+question:"A clock gains 5 minutes every hour. If it is correct at 8:00 AM, what time will it show when the real time is 2:00 PM?",
+options:["2:25 PM","2:30 PM","2:35 PM","2:40 PM"],
+answer:1
+},
+{
+question:"Find the missing number:\n2, 5, 10, 17, 26, ?",
+options:["35","36","37","38"],
+answer:2
+},
+{
+question:"Which word does NOT belong?",
+options:["Triangle","Square","Circle","Cube"],
+answer:3
+}
 ];
 
