@@ -189,3 +189,57 @@ body{
 .next-btn:hover{
   background:#4338ca;
 }
+.iq-circle{
+    width:180px;
+    height:180px;
+    margin:25px auto;
+    border-radius:50%;
+    background:conic-gradient(#4f46e5 0deg,#4f46e5 var(--deg),#e5e7eb var(--deg));
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    animation:pop .5s ease;
+}
+
+.iq-inner{
+    width:140px;
+    height:140px;
+    background:#fff;
+    border-radius:50%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+}
+
+.iq-number{
+    font-size:46px;
+    font-weight:700;
+    color:#4f46e5;
+}
+
+.iq-label{
+    color:#666;
+    font-size:14px;
+}
+
+.badge{
+    display:inline-block;
+    margin-top:20px;
+    padding:10px 22px;
+    border-radius:999px;
+    background:#4f46e5;
+    color:#fff;
+    font-weight:600;
+}
+
+@keyframes pop{
+    from{
+        transform:scale(.6);
+        opacity:0;
+    }
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
