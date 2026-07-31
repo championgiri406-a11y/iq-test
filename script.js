@@ -93,7 +93,25 @@ ${String(Math.floor(timeLeft / 60)).padStart(2,"0")}:${String(timeLeft % 60).pad
   `;
 }
 
-function selectAnswer(index){
+function selectAnswer(index) {
+
+  const buttons = document.querySelectorAll(".answers button");
+
+  buttons.forEach((btn, i) => {
+    btn.disabled = true;
+
+    if (i === questions[currentQuestion].answer) {
+      btn.style.background = "#22c55e";
+      btn.style.color = "#fff";
+    }
+
+    if (i === index && i !== questions[currentQuestion].answer) {
+      btn.style.background = "#ef4444";
+      btn.style.color = "#fff";
+    }
+  });
+
+}
 
     if(index === questions[currentQuestion].answer){
         score++;
