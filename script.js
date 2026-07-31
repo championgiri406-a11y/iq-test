@@ -143,7 +143,13 @@ function finishTest() {
   else if (score <= 16) iq = 125;
   else if (score <= 19) iq = 140;
   else iq = 155;
-  
+
+    localStorage.setItem("bestIQ", iq);
+
+if (score > (Number(localStorage.getItem("bestScore")) || 0)) {
+    localStorage.setItem("bestScore", score);
+}
+    
   let bestIQ = localStorage.getItem("bestIQ") || 0;
 let bestScore = localStorage.getItem("bestScore") || 0;
 
