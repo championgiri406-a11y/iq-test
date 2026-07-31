@@ -42,10 +42,6 @@ document.getElementById("startBtn").disabled = true;
 
   showLoading();
 }
-  
-  showQuestion();
-  startTimer();
-}
 
 function startTimer() {
   clearInterval(timer);
