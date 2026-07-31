@@ -1,59 +1,39 @@
-console.log("script.js loaded");
 let currentQuestion = 0;
 let score = 0;
-
-let timeLeft = 20 * 60; // 20 minutes
-let timerInterval;
+let timeLeft = 20 * 60;
+let timer;
 
 document.addEventListener("DOMContentLoaded", () => {
-  document
-    .getElementById("startBtn")
-    .addEventListener("click", startTest);
+  document.getElementById("startBtn").addEventListener("click", startTest);
 });
 
 function startTest() {
-  startTimer();
+  currentQuestion = 0;
+  score = 0;
+  timeLeft = 20 * 60;
+
   showQuestion();
+  startTimer();
 }
 
 function startTimer() {
+  clearInterval(timer);
 
-  clearInterval(timerInterval);
+  timer = setInterval(() => {
+    timeLeft--;
 
-  timerInterval = setInterval(() => {
-
-    let minutes = Math.floor(timeLeft / 60);
-    let seconds = timeLeft % 60;
-
-    const timer = document.querySelector(".timer");
-
-    if (timer) {
-      timer.textContent =
-        `${String(minutes).padStart(2,"0")}:${String(seconds).padStart(2,"0")}`;
+    const timerEl = document.querySelector(".timer");
+    if (timerEl) {
+      const min = String(Math.floor(timeLeft / 60)).padStart(2, "0");
+      const sec = String(timeLeft % 60).padStart(2, "0");
+      timerEl.textContent = `${min}:${sec}`;
     }
 
     if (timeLeft <= 0) {
-
-      clearInterval(timerInterval);
-
-      document.getElementById("app").innerHTML = `
-      <div class="container">
-        <h1>⏰ Time's Up!</h1>
-        <p>Your test has ended.</p>
-
-        <button class="next-btn" onclick="location.reload()">
-          Restart Test
-        </button>
-      </div>
-      `;
-
-      return;
+      clearInterval(timer);
+      finishTest();
     }
-
-    timeLeft--;
-
-  },1000);
-
+  }, 1000);
 }
 
 function showQuestion() {
@@ -64,9 +44,7 @@ function showQuestion() {
 
     <div class="header">
       <div class="logo">🧠 IQ TEST HUB</div>
-      <div class="timer">
-${String(Math.floor(timeLeft / 60)).padStart(2,"0")}:${String(timeLeft % 60).padStart(2,"0")}
-</div>
+      <div class="timer">${String(Math.floor(timeLeft / 60)).padStart(2,"0")}:${String(timeLeft % 60).padStart(2,"0")}</div>
     </div>
 
     <h3>Question ${currentQuestion + 1} of ${questions.length}</h3>
@@ -85,9 +63,9 @@ ${String(Math.floor(timeLeft / 60)).padStart(2,"0")}:${String(timeLeft % 60).pad
       ).join("")}
     </div>
 
-    <button class="next-btn" id="nextBtn" onclick="nextQuestion()" style="display:none;">
-  Next →
-</button>
+    <button id="nextBtn" class="next-btn" onclick="nextQuestion()" style="display:none;">
+      Next →
+    </button>
 
   </div>
   `;
@@ -111,38 +89,38 @@ function selectAnswer(index) {
     }
   });
 
-}
+  if (index === questions[currentQuestion].answer) {
+    score++;
+  }
 
-    if(index === questions[currentQuestion].answer){
-        score++;
-    }
-
-document.getElementById("nextBtn").style.display = "inline-block";
-
+  document.getElementById("nextBtn").style.display = "inline-block";
 }
 
 function nextQuestion() {
-
   if (currentQuestion < questions.length - 1) {
     currentQuestion++;
     showQuestion();
   } else {
-
-    document.getElementById("app").innerHTML = `
-      <div class="container">
-        <h1>🏆 Test Completed</h1>
-
-        <h2>Your Score</h2>
-
-        <h1>${score} / ${questions.length}</h1>
-
-        <p>Next, we'll calculate your IQ score.</p>
-
-        <button class="next-btn" onclick="location.reload()">
-          Restart Test
-        </button>
-      </div>
-    `;
-
+    finishTest();
   }
+}
+
+function finishTest() {
+  clearInterval(timer);
+
+  document.getElementById("app").innerHTML = `
+  <div class="container">
+
+    <h1>🏆 Test Completed</h1>
+
+    <h2>Your Score</h2>
+
+    <h1>${score} / ${questions.length}</h1>
+
+    <button class="next-btn" onclick="location.reload()">
+      Restart Test
+    </button>
+
+  </div>
+  `;
 }
