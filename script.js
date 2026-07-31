@@ -138,10 +138,12 @@ iq >= 95 ? "🥉 Average" :
 "📘 Keep Practicing"}
 </div>
 
-<h3>Your Score</h3>
-<p style="font-size:26px;font-weight:bold;">
-${score} / ${questions.length}
-</p>
+<div class="score-box">
+    <h3>Your Score</h3>
+    <div class="score-number">
+        ${score} / ${questions.length}
+    </div>
+</div>
 
 <button class="next-btn" onclick="location.reload()">
 🔄 Restart Test
@@ -149,4 +151,18 @@ ${score} / ${questions.length}
 
 </div>
 `;
+.score-box{
+    margin:25px 0;
+    text-align:center;
+}
+
+.score-box h3{
+    font-size:22px;
+    margin-bottom:10px;
+}
+
+.score-number{
+    font-size:40px;
+    font-weight:700;
+    color:#4f46e5;
 }
