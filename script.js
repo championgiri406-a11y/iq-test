@@ -117,9 +117,7 @@ function selectAnswer(index) {
         score++;
     }
 
-    document.querySelectorAll(".answers button").forEach(btn=>{
-        btn.disabled = true;
-    });
+document.getElementById("nextBtn").style.display = "inline-block";
 
 }
 
