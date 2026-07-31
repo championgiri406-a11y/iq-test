@@ -26,7 +26,10 @@ function showLoading() {
   setTimeout(() => {
     showQuestion();
     startTimer();
-  }, 2500);
+
+    const btn = document.getElementById("startBtn");
+    if (btn) btn.disabled = false;
+}, 2500);
 }
 
 function startTest() {
