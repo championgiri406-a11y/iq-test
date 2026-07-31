@@ -35,4 +35,31 @@ options:["30","35","36","49"],
 answer:2
 }
 
+,
+{
+question:"Find the missing number:\n81, 27, 9, 3, ?",
+options:["0","1","2","6"],
+answer:1
+},
+{
+question:"Which letter comes next?\nA, C, F, J, O, ?",
+options:["S","T","U","V"],
+answer:2
+},
+{
+question:"A train travels 240 km in 3 hours. At the same speed, how far will it travel in 7 hours?",
+options:["480 km","520 km","560 km","600 km"],
+answer:2
+},
+{
+question:"Which number replaces the question mark?\n5, 11, 23, 47, ?",
+options:["91","93","95","97"],
+answer:2
+},
+{
+question:"A man is facing north. He turns 135° clockwise, then 225° anticlockwise. Which direction is he facing now?",
+options:["North","South","East","West"],
+answer:3
+}
 ];
+
