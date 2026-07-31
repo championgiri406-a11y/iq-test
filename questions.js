@@ -1,4 +1,3 @@
-
 const questions = [
 {
 question:"What number comes next?\n2, 4, 8, 16, ?",
