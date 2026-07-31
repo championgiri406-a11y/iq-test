@@ -108,14 +108,25 @@ function nextQuestion() {
 function finishTest() {
   clearInterval(timer);
 
+  let iq;
+
+  if (score <= 4) iq = 80;
+  else if (score <= 8) iq = 95;
+  else if (score <= 12) iq = 110;
+  else if (score <= 16) iq = 125;
+  else if (score <= 19) iq = 140;
+  else iq = 155;
+
   document.getElementById("app").innerHTML = `
   <div class="container">
 
     <h1>🏆 Test Completed</h1>
 
     <h2>Your Score</h2>
-
     <h1>${score} / ${questions.length}</h1>
+
+    <h2>Estimated IQ</h2>
+    <h1>${iq}</h1>
 
     <button class="next-btn" onclick="location.reload()">
       Restart Test
