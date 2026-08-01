@@ -251,3 +251,34 @@ Your intelligence profile has been analyzed successfully.
 </div>
 `;
 }
+function downloadCertificate() {
+
+    const certificate = `
+🏆 IQ TEST HUB CERTIFICATE
+
+────────────────────────────
+
+Certificate of Achievement
+
+Estimated IQ : ${localStorage.getItem("bestIQ")}
+Best Score   : ${localStorage.getItem("bestScore")} / ${questions.length}
+
+Congratulations!
+
+This certificate recognizes your successful completion of the IQ Test Hub intelligence assessment.
+
+Keep challenging your brain and continue improving your logical thinking skills.
+
+────────────────────────────
+IQ TEST HUB
+`;
+
+    const blob = new Blob([certificate], { type: "text/plain" });
+
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "IQ_Test_Hub_Certificate.txt";
+    link.click();
+
+    URL.revokeObjectURL(link.href);
+}
