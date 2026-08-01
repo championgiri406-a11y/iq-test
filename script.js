@@ -361,6 +361,12 @@ function reviewAnswers() {
                 <strong>Correct Answer:</strong>
                 ${q.options[q.answer]}
             </p>
+${q.explanation ? `
+<p style="margin-top:12px;padding:12px;background:#f8fafc;border-left:4px solid #4f46e5;border-radius:8px;">
+    <strong>💡 Explanation:</strong><br>
+    ${q.explanation}
+</p>
+` : ""}
 
         </div>
         `;
