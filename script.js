@@ -148,6 +148,19 @@ function finishTest() {
   else if (score <= 19) iq = 140;
   else iq = 155;
 
+let description = "";
+
+if (iq >= 140)
+    description = "Exceptional intelligence. Your reasoning and analytical abilities are outstanding.";
+else if (iq >= 125)
+    description = "Excellent cognitive ability. You solve complex problems with ease.";
+else if (iq >= 110)
+    description = "Above-average intelligence. You demonstrate strong logical thinking.";
+else if (iq >= 95)
+    description = "Average intelligence. You have solid reasoning and problem-solving skills.";
+else
+    description = "Keep practicing. Regular brain training can improve your logical thinking.";
+
     localStorage.setItem("bestIQ", iq);
 
 if (score > (Number(localStorage.getItem("bestScore")) || 0)) {
