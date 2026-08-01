@@ -273,3 +273,14 @@ body{
     font-weight:700;
     box-shadow:0 10px 25px rgba(79,70,229,.25);
 }
+.answers button{
+    transition:.25s;
+}
+
+.answers button:hover{
+    transform:translateY(-3px);
+}
+
+.answers button:active{
+    transform:scale(.97);
+}
