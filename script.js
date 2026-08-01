@@ -1,6 +1,7 @@
 let currentQuestion = 0;
 let score = 0;
 let userAnswers = [];
+let categoryScores = {};
 let timeLeft = 20 * 60;
 let timer;
 
