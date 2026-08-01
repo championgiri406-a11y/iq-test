@@ -290,6 +290,10 @@ Your intelligence profile has been analyzed successfully.
 🎓 Download Certificate
 </button>
 
+<button class="certificate-btn" onclick="reviewAnswers()">
+📖 Review Answers
+</button>
+
 <button class="next-btn" onclick="location.reload()">
 🔄 Restart Test
 </button>
