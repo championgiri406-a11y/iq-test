@@ -220,12 +220,9 @@ Your intelligence profile has been analyzed successfully.
     </div>
 </div>
 
-<div class="badge">
-${iq >= 140 ? "🏆 Genius" :
-iq >= 125 ? "🥇 Gifted" :
-iq >= 110 ? "🥈 Above Average" :
-iq >= 95 ? "🥉 Average" :
-"📘 Keep Practicing"}
+<div class="achievement-card">
+    <div class="medal">${medal}</div>
+    <div class="achievement-title">${achievement}</div>
 </div>
 
 <div class="score-box">
