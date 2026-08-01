@@ -37,6 +37,7 @@ function startTest() {
 document.getElementById("startBtn").disabled = true;
   currentQuestion = 0;
   score = 0;
+  userAnswers = [];
   timeLeft = 20 * 60;
 
   questions.sort(() => Math.random() - 0.5);
