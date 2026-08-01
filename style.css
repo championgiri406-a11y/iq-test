@@ -290,3 +290,16 @@ body{
     margin:10px 0 25px;
     text-align:center;
 }
+.iq-description{
+    max-width:650px;
+    margin:0 auto 25px;
+    padding:16px 20px;
+    background:linear-gradient(135deg,#f8faff,#eef4ff);
+    border-left:5px solid #4f46e5;
+    border-radius:14px;
+    color:#444;
+    font-size:17px;
+    line-height:1.7;
+    text-align:center;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
