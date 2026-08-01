@@ -148,6 +148,14 @@ function finishTest() {
   else if (score <= 19) iq = 140;
   else iq = 155;
 
+const accuracy = Math.round((score / questions.length) * 100);
+
+const timeUsed = (20 * 60) - timeLeft;
+
+const minutes = Math.floor(timeUsed / 60);
+
+const seconds = String(timeUsed % 60).padStart(2, "0");
+
 let achievement = "";
 let medal = "";
 
