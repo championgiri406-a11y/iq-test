@@ -330,3 +330,47 @@ function downloadCertificate() {
 
     });
 }
+function reviewAnswers() {
+
+    let html = `
+    <div class="container">
+        <h1>📖 Review Answers</h1>
+    `;
+
+    questions.forEach((q, i) => {
+
+        const correct = userAnswers[i] === q.answer;
+
+        html += `
+        <div class="analytics-card">
+
+            <h3>Question ${i + 1}</h3>
+
+            <p>${q.question.replace(/\n/g,"<br>")}</p>
+
+            <p style="color:${correct ? "#22c55e" : "#ef4444"};">
+                ${correct ? "✅ Correct" : "❌ Incorrect"}
+            </p>
+
+            <p>
+                <strong>Your Answer:</strong>
+                ${q.options[userAnswers[i]] ?? "No Answer"}
+            </p>
+
+            <p>
+                <strong>Correct Answer:</strong>
+                ${q.options[q.answer]}
+            </p>
+
+        </div>
+        `;
+    });
+
+    html += `
+        <button class="next-btn" onclick="location.reload()">
+            🔄 Back to Home
+        </button>
+    </div>`;
+
+    document.getElementById("app").innerHTML = html;
+}
