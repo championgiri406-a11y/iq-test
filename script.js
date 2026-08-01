@@ -122,7 +122,9 @@ function selectAnswer(index) {
     }
   });
 
-  if (index === questions[currentQuestion].answer) {
+  userAnswers[currentQuestion] = index;
+
+if (index === questions[currentQuestion].answer) {
     score++;
   }
 
