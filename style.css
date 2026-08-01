@@ -284,3 +284,9 @@ body{
 .answers button:active{
     transform:scale(.97);
 }
+.result-subtitle{
+    color:#666;
+    font-size:18px;
+    margin:10px 0 25px;
+    text-align:center;
+}
