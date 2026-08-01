@@ -5,6 +5,7 @@ question:"Find the missing number:\n2, 6, 12, 20, 30, ?",
 options:["36","40","42","48"],
 answer:2,
 explanation:"The differences are +4, +6, +8, +10. The next difference is +12, so 30 + 12 = 42."
+category:"Numerical Ability",
 },
 
 {
