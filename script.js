@@ -148,6 +148,26 @@ function finishTest() {
   else if (score <= 19) iq = 140;
   else iq = 155;
 
+let rank = "";
+let percentile = "";
+
+if (iq >= 140) {
+    rank = "#1";
+    percentile = "Top 1%";
+} else if (iq >= 125) {
+    rank = "#2";
+    percentile = "Top 5%";
+} else if (iq >= 110) {
+    rank = "#3";
+    percentile = "Top 15%";
+} else if (iq >= 95) {
+    rank = "#4";
+    percentile = "Top 50%";
+} else {
+    rank = "#5";
+    percentile = "Keep Improving";
+}
+
 const accuracy = Math.round((score / questions.length) * 100);
 
 const timeUsed = (20 * 60) - timeLeft;
