@@ -128,7 +128,12 @@ function selectAnswer(index) {
 
 if (index === questions[currentQuestion].answer) {
     score++;
-  }
+
+    const category = questions[currentQuestion].category;
+
+    categoryScores[category] =
+        (categoryScores[category] || 0) + 1;
+}
 
   document.getElementById("nextBtn").style.display = "inline-block";
 }
