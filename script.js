@@ -148,6 +148,26 @@ function finishTest() {
   else if (score <= 19) iq = 140;
   else iq = 155;
 
+let achievement = "";
+let medal = "";
+
+if (iq >= 140) {
+    medal = "🥇";
+    achievement = "GENIUS";
+} else if (iq >= 125) {
+    medal = "🥈";
+    achievement = "GIFTED";
+} else if (iq >= 110) {
+    medal = "🥉";
+    achievement = "ABOVE AVERAGE";
+} else if (iq >= 95) {
+    medal = "⭐";
+    achievement = "AVERAGE";
+} else {
+    medal = "📘";
+    achievement = "KEEP PRACTICING";
+}
+
 let description = "";
 
 if (iq >= 140)
