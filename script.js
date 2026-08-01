@@ -247,6 +247,13 @@ Your intelligence profile has been analyzed successfully.
 <div class="score-box">
     <h3>⭐ Best Score</h3>
     <div class="score-number">${bestScore} / ${questions.length}</div>
+<div class="analytics-card">
+    <h3>📊 Performance Report</h3>
+
+    <p><strong>Accuracy:</strong> ${accuracy}%</p>
+    <p><strong>Time Used:</strong> ${minutes}:${seconds}</p>
+    <p><strong>Questions Correct:</strong> ${score} / ${questions.length}</p>
+</div>
 </div>
 <button class="certificate-btn" onclick="downloadCertificate()">
 🎓 Download Certificate
