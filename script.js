@@ -240,6 +240,10 @@ Your intelligence profile has been analyzed successfully.
     <h3>⭐ Best Score</h3>
     <div class="score-number">${bestScore} / ${questions.length}</div>
 </div>
+<button class="certificate-btn" onclick="downloadCertificate()">
+🎓 Download Certificate
+</button>
+
 <button class="next-btn" onclick="location.reload()">
 🔄 Restart Test
 </button>
