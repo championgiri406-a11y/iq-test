@@ -189,6 +189,10 @@ if (score > bestScore) {
 Your intelligence profile has been analyzed successfully.
 </p>
 
+<div class="iq-description">
+    ${description}
+</div>
+
 <div class="iq-circle" style="--deg:${iq*2.3}deg;">
     <div class="iq-inner">
         <div class="iq-number">${iq}</div>
