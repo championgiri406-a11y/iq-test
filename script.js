@@ -251,34 +251,32 @@ Your intelligence profile has been analyzed successfully.
 </div>
 `;
 }
+
 function downloadCertificate() {
 
-    const certificate = `
-🏆 IQ TEST HUB CERTIFICATE
+    document.getElementById("certIQ").textContent =
+        "IQ " + localStorage.getItem("bestIQ");
 
-────────────────────────────
+    document.getElementById("certAchievement").textContent =
+        document.querySelector(".achievement-title").textContent;
 
-Certificate of Achievement
+    document.getElementById("certDate").textContent =
+        "Date: " + new Date().toLocaleDateString();
 
-Estimated IQ : ${localStorage.getItem("bestIQ")}
-Best Score   : ${localStorage.getItem("bestScore")} / ${questions.length}
+    const certificate = document.getElementById("certificate");
 
-Congratulations!
+    certificate.style.display = "block";
 
-This certificate recognizes your successful completion of the IQ Test Hub intelligence assessment.
+    html2canvas(certificate, {
+        scale: 2
+    }).then(canvas => {
 
-Keep challenging your brain and continue improving your logical thinking skills.
+        certificate.style.display = "none";
 
-────────────────────────────
-IQ TEST HUB
-`;
+        const link = document.createElement("a");
+        link.download = "IQ_Test_Hub_Certificate.png";
+        link.href = canvas.toDataURL("image/png");
+        link.click();
 
-    const blob = new Blob([certificate], { type: "text/plain" });
-
-    const link = document.createElement("a");
-    link.href = URL.createObjectURL(blob);
-    link.download = "IQ_Test_Hub_Certificate.txt";
-    link.click();
-
-    URL.revokeObjectURL(link.href);
+    });
 }
