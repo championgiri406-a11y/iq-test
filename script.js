@@ -170,7 +170,11 @@ if (score > bestScore) {
 <div class="container">
 
 <h1>🧠 IQ TEST HUB</h1>
-<h2>🎉 Assessment Complete</h2>
+<h2>🎉 Assessment Completed Successfully</h2>
+
+<p class="result-subtitle">
+Your intelligence profile has been analyzed successfully.
+</p>
 
 <div class="iq-circle" style="--deg:${iq*2.3}deg;">
     <div class="iq-inner">
