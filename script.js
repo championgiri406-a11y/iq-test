@@ -285,6 +285,14 @@ Your intelligence profile has been analyzed successfully.
     <p><strong>Time Used:</strong> ${minutes}:${seconds}</p>
     <p><strong>Questions Correct:</strong> ${score} / ${questions.length}</p>
 </div>
+<div class="analytics-card">
+    <h3>🧠 Category Performance</h3>
+
+    <p><strong>Numerical Ability:</strong> ${categoryScores["Numerical Ability"] || 0}</p>
+    <p><strong>Logical Reasoning:</strong> ${categoryScores["Logical Reasoning"] || 0}</p>
+    <p><strong>Pattern Recognition:</strong> ${categoryScores["Pattern Recognition"] || 0}</p>
+    <p><strong>Verbal Reasoning:</strong> ${categoryScores["Verbal Reasoning"] || 0}</p>
+</div>
 <div class="rank-card">
     <h3>🌍 Performance Rank</h3>
 
