@@ -159,23 +159,6 @@ function finishTest() {
   else if (score <= 19) iq = 140;
   else iq = 155;
 
-let medal = "🥉";
-let achievement = "Bronze Thinker";
-
-if (iq >= 140) {
-    medal = "💎";
-    achievement = "Legendary Genius";
-} else if (iq >= 125) {
-    medal = "🥇";
-    achievement = "Master Mind";
-} else if (iq >= 110) {
-    medal = "🥈";
-    achievement = "Elite Thinker";
-} else if (iq >= 95) {
-    medal = "🥉";
-    achievement = "Smart Solver";
-}
-
 let rank = "";
 let percentile = "";
 
